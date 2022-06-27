@@ -2,7 +2,7 @@ movies = {
   LOTR: 4
 }
 
-puts "What do you want to do? (add, update, display, delete)"
+puts "What do you want to do? (add, display, update, delete)"
 choice = gets.chomp
 
 case choice
