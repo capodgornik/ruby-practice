@@ -15,7 +15,7 @@ case choice
       movies[title.to_sym] = rating.to_i
       puts "Added!"
     else
-      puts "This movie is already in the hash"
+      puts "This movie is already in the hash."
     end
   when "display"
     movies.each do |title, rating|
