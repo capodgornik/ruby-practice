@@ -11,12 +11,14 @@ class Account
     puts pin_number == @pin ? "Balance: $#{@balance}." : pin_error
   end
   
-  def withdraw(pin_number, amount)
-    if !overdraw(amount) && pin_number == pin
-      @balance -= amount
-      display_balance(pin_number)
-    elsif overdraw(amount) && pin_number == pin
-      puts "Error: Not enough money in account"
+   def withdraw(pin_number, amount)
+    if pin_number == pin
+      if !overdraw(amount)
+        @balance -= amount
+        display_balance(pin_number)
+      else
+        puts "Error: Not enough money in account"
+      end
     else
       puts pin_error
     end
