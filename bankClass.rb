@@ -5,6 +5,7 @@ class Account
   def initialize(name, balance =  100)
     @name = name
     @balance = balance
+    pin
   end
 
   def display_balance(pin_number)
@@ -12,7 +13,7 @@ class Account
   end
   
    def withdraw(pin_number, amount)
-    if pin_number == pin
+    if pin_number == @pin
       if !overdraw(amount)
         @balance -= amount
         display_balance(pin_number)
@@ -25,7 +26,7 @@ class Account
   end
 
   def deposit(pin_number, amount)
-    if pin_number == pin
+    if pin_number == @pin
       @balance += amount
       display_balance(pin_number)
     else
