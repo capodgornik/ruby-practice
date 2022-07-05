@@ -16,10 +16,10 @@ class Account
     if pin_number == @pin
       if !overdraw(amount)
         @balance -= amount
-        display_balance(pin_number)
       else
-        puts "Error: Not enough money in account"
+        puts "Error: Not enough money in account."
       end
+      display_balance(pin_number)
     else
       puts pin_error
     end
@@ -35,11 +35,7 @@ class Account
   end
   
   def overdraw(amount)
-    if amount > balance
-      return true
-    else
-       return false
-    end
+    return amount > balance
   end
 
   private
