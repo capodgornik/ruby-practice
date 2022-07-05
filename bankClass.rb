@@ -55,4 +55,5 @@ class SavingsAccount < Account; end
 checking_account = Account.new("Imladris", 1_000_000_000)
 checking_account.withdraw(1234, 1_000_000_000)
 checking_account.deposit(1234, 300)
+checking_account.withdraw(1234, 301)
 checking_account.display_balance(4321)
